@@ -37,9 +37,48 @@ public class SlideshowFragment extends Fragment implements NfcAdapter.ReaderCall
     private WebView webView;
     private NfcAdapter nfcAdapter;
     private NfcA lastTag;
-    private HexFormat hexFormat = HexFormat.of();
 
     private static final String url = "https://bucks.shady.tel/app/app-login";
+
+    private static char toHexChar(int b) {
+        if (b < 0) {
+            throw new IllegalArgumentException();
+        } else if (b < 10) {
+            return (char)('0' + b);
+        } else if (b <= 'f') {
+            return (char)('a' + b);
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static byte fromHexChar(char c) {
+        if (c >= '0' && c <= '9') {
+            return (byte)(c - '0');
+        } else if (c >= 'a' && c <= 'f') {
+            return (byte)(c - 'a' + 10);
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static String formatHex(byte[] arr) {
+        StringBuilder sb = new StringBuilder();
+        for (byte b : arr) {
+            sb.append(toHexChar((b & 0xf0) >> 4));
+            sb.append(toHexChar(b & 0x0f));
+        }
+        return sb.toString();
+    }
+
+    private static byte[] parseHex(String hexStr) {
+        byte[] arr = new byte[hexStr.length() / 2];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (byte)(fromHexChar(hexStr.charAt(i * 2)) << 4);
+            arr[i] |= fromHexChar(hexStr.charAt(i * 2 + 1));
+        }
+        return arr;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -117,7 +156,7 @@ public class SlideshowFragment extends Fragment implements NfcAdapter.ReaderCall
 
     @Override
     public void onTagDiscovered(Tag tag) {
-        String tagId = hexFormat.formatHex(tag.getId());
+        String tagId = formatHex(tag.getId());
         Log.i("NFCWebView", "Found tag " + tagId);
         try {
             lastTag = NfcA.get(tag);
@@ -134,12 +173,12 @@ public class SlideshowFragment extends Fragment implements NfcAdapter.ReaderCall
 
     private void tagTransceive(JSONObject msg) {
         try {
-            byte[] txData = hexFormat.parseHex(msg.getString("txData"));
+            byte[] txData = parseHex(msg.getString("txData"));
             // This is very naughty. We aren't supposed to call transceive() on the main thread.
             byte[] rxData = lastTag.transceive(txData);
             JSONObject resp = new JSONObject();
             resp.put("msg", "tagTransceiveResp");
-            resp.put("rxData", hexFormat.formatHex(rxData));
+            resp.put("rxData", formatHex(rxData));
             webMessagePorts[0].postMessage(new WebMessage(resp.toString()));
         } catch (Exception ex) {
             Log.e("NFCWebView", ex.toString());
