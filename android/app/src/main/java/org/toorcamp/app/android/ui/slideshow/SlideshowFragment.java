@@ -21,9 +21,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.webkit.internal.ApiFeature;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.toorcamp.app.android.databinding.FragmentSlideshowBinding;
@@ -46,7 +48,7 @@ public class SlideshowFragment extends Fragment implements NfcAdapter.ReaderCall
         } else if (b < 10) {
             return (char)('0' + b);
         } else if (b <= 'f') {
-            return (char)('a' + b);
+            return (char)('a' + b - 10);
         } else {
             throw new IllegalArgumentException();
         }
@@ -131,6 +133,9 @@ public class SlideshowFragment extends Fragment implements NfcAdapter.ReaderCall
                         case "tagTransceive":
                             tagTransceive(msg);
                             break;
+                        case "tagBulkSend":
+                            tagBulkSend(msg);
+                            break;
                     }
                 } catch (JSONException ex) {
                     Log.e("NFCWebView", ex.toString());
@@ -179,6 +184,24 @@ public class SlideshowFragment extends Fragment implements NfcAdapter.ReaderCall
             JSONObject resp = new JSONObject();
             resp.put("msg", "tagTransceiveResp");
             resp.put("rxData", formatHex(rxData));
+            webMessagePorts[0].postMessage(new WebMessage(resp.toString()));
+        } catch (Exception ex) {
+            Log.e("NFCWebView", ex.toString());
+        }
+    }
+
+    private void tagBulkSend(JSONObject msg) {
+        try {
+            JSONArray cmds = msg.getJSONArray("cmds");
+            JSONObject resp = new JSONObject();
+            JSONArray cmdResps = new JSONArray();
+            resp.put("msg", "tagBulkSendResp");
+            resp.put("resps", cmdResps);
+            for (int i = 0; i < cmds.length(); i++) {
+                byte[] txData = parseHex(cmds.getString(i));
+                byte[] rxData = lastTag.transceive(txData);
+                cmdResps.put(formatHex(rxData));
+            }
             webMessagePorts[0].postMessage(new WebMessage(resp.toString()));
         } catch (Exception ex) {
             Log.e("NFCWebView", ex.toString());
