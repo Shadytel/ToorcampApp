@@ -57,6 +57,8 @@ public class SlideshowFragment extends Fragment implements NfcAdapter.ReaderCall
     private static byte fromHexChar(char c) {
         if (c >= '0' && c <= '9') {
             return (byte)(c - '0');
+        } else if (c >= 'A' && c <= 'F') {
+            return (byte)(c - 'A' + 10);
         } else if (c >= 'a' && c <= 'f') {
             return (byte)(c - 'a' + 10);
         } else {
