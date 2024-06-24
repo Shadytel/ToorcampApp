@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Toorcamp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Toorcamp 2024</string>
+    <string name="nav_header_subtitle">Status Unknown</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+
+    <string name="menu_shadybucks">Shadybucks</string>
+    <string name="menu_wificonfig">Configure WiFi</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="wifi_config_info">The Toorcamp #noc is proud to present several options for
+        fast, free WiFi this year! With a 10Gbps uplink graceously offered by Rock Island Internet,
+        and backups provided by SpaceX, we should have plenty of bandwidth to meet your needs.
+        However, wireless spectrum is a scarce resource, so PLEASE use our WiFi instead of setting
+        up your own!
+
+        \n\nYou\'ll likely want to use the default settings. This protects you and your device
+        from fake Access Points impersonating the Toorcamp network, and blocks all
+        incoming traffic from others. You get a safe, authenticated, outbound-only
+        NATed connection to the Internet.
+
+        \n\nHowever, if you would like a public IP address, or want to host a service
+        from your device, you can choose our new "Fully Exposed" service, with dedicated
+        IPv4 and IPv6 addresses for your device. You may also register DNS entries under
+        toor.camp for your device/services. However, YOU are responsible for the security
+        of your device! It is DIRECTLY connected to the Internet with NO FIREWALL and NO
+        ADDRESS TRANSLATION. Proceed with this profile ONLY if you fully understand the
+        implications of this.
+    </string>
+</resources>

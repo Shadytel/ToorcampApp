@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|top"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/wifiConfigText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/wifi_config_info" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/wifiConfigPrivate">
+
+        <RadioButton
+            android:id="@+id/wifiConfigPrivate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NATed, Firewalled, IPv4-only" />
+
+        <RadioButton
+            android:id="@+id/wifiConfigPublic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fully Exposed: No Firewall, Public IPv4/IPv6 addresses" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/setWifiConfigButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configure WiFi" />
+</LinearLayout>
