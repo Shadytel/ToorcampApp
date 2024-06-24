@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml:2:13-83
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml:2:13-83
+	package
+		INJECTED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml
+	xmlns:android
+		ADDED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml:2:23-81
+uses-sdk
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml reason: use-sdk injection requested
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml
+	android:minSdkVersion
+		INJECTED from /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest11287090347945280753.xml

@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml:2:13-83
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml:2:13-83
+	package
+		INJECTED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml
+	xmlns:android
+		ADDED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml:2:23-81
+uses-sdk
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml reason: use-sdk injection requested
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml
+INJECTED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml
+	android:minSdkVersion
+		INJECTED from /Users/kkoscher/Projects/EventFahrplan/database/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4391067965967276536.xml

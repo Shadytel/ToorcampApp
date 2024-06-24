@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "info.metadude.android.eventfahrplan.network.test.network-mergeDebugAndroidTestResources-14:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/kkoscher/.gradle/caches/transforms-4/c1c26942e486a5ba7c7311de0168c7f7/transformed/appcompat-1.2.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/Users/kkoscher/.gradle/caches/transforms-4/9e64bb3e6446095778f2d1e802b65763/transformed/core-1.3.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

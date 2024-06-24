@@ -1,0 +1,5 @@
+info.metadude.android.eventfahrplan.commons.testing.test.commons-testing-androidTest-0 /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/generated/res/resValues/androidTest/debug
+info.metadude.android.eventfahrplan.commons.testing.test.commons-testing-mergeDebugAndroidTestResources-1 /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+info.metadude.android.eventfahrplan.commons.testing.test.commons-testing-mergeDebugAndroidTestResources-2 /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+info.metadude.android.eventfahrplan.commons.testing.test.commons-testing-debugAndroidTest-3 /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+info.metadude.android.eventfahrplan.commons.testing.test.commons-testing-debug-4 /Users/kkoscher/Projects/EventFahrplan/commons-testing/build/intermediates/packaged_res/debug/packageDebugResources

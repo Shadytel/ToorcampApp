@@ -1,0 +1,38 @@
+import nerd.tuxmobil.fahrplan.congress.Android
+import nerd.tuxmobil.fahrplan.congress.Config
+import nerd.tuxmobil.fahrplan.congress.Libs
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+
+android {
+    namespace "info.metadude.android.eventfahrplan.network"
+
+    compileSdk Android.compileSdkVersion
+    buildToolsVersion = Android.buildToolsVersion
+
+    defaultConfig {
+        minSdk Android.minSdkVersion
+        targetSdk Android.targetSdkVersion
+    }
+
+    compileOptions {
+        targetCompatibility Config.compatibleJavaVersion
+        sourceCompatibility Config.compatibleJavaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = Config.compatibleJavaVersion
+    }
+}
+
+dependencies {
+    implementation project(":commons")
+
+    implementation Libs.annotation
+    implementation Libs.okhttp
+
+    testImplementation Libs.junitJupiterApi
+    testRuntimeOnly Libs.junitJupiterEngine
+    testImplementation Libs.truth
+}
