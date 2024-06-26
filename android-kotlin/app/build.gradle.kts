@@ -11,12 +11,11 @@ android {
         applicationId = "org.toorcamp.app.android"
         minSdk = 29
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.5.0"
+        versionCode = 2
+        versionName = "0.7.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -36,10 +35,13 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.2"
+    }
 }
 
 dependencies {
-
+    implementation("androidx.webkit:webkit:1.8.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

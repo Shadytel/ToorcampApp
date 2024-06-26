@@ -19,16 +19,16 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@id/wifiConfigPrivate">
+        android:checkedButton="@id/wifiConfigPublic">
 
         <RadioButton
-            android:id="@+id/wifiConfigPrivate"
+            android:id="@+id/wifiConfigPublic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="NATed, Firewalled, IPv4-only" />
 
         <RadioButton
-            android:id="@+id/wifiConfigPublic"
+            android:id="@+id/wifiConfigPrivate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fully Exposed: No Firewall, Public IPv4/IPv6 addresses" />

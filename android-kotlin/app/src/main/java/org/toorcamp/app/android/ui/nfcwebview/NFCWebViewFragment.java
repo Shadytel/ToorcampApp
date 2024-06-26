@@ -30,7 +30,7 @@ public class NFCWebViewFragment extends Fragment implements NfcAdapter.ReaderCal
     private NfcA lastTag;
 
     private static final String TAG = "NFCWebView";
-    private static final String url = "https://bucks.shady.tel/app/app-login";
+    private static final String url = "https://bucks.shady.tel/";
 
     public NFCWebViewFragment() {
         super(R.layout.fragment_nfcwebview);
@@ -152,6 +152,17 @@ public class NFCWebViewFragment extends Fragment implements NfcAdapter.ReaderCal
         }
     }
 
+    private void sendExceptionToWebApp(Exception ex) {
+        try {
+            JSONObject errMsg = new JSONObject();
+            errMsg.put("msg", "exception");
+            errMsg.put("str", ex.toString());
+            webMessagePorts[0].postMessage(new WebMessage(errMsg.toString()));
+        } catch (Exception ex2) {
+            Log.e(TAG, "Cannot send exception to web app!");
+        }
+    }
+
     @Override
     public void onTagDiscovered(Tag tag) {
         String tagId = formatHex(tag.getId());
@@ -166,6 +177,7 @@ public class NFCWebViewFragment extends Fragment implements NfcAdapter.ReaderCal
             webMessagePorts[0].postMessage(new WebMessage(msg.toString()));
         } catch (Exception ex) {
             Log.e(TAG, ex.toString());
+            sendExceptionToWebApp(ex);
         }
     }
 
@@ -180,6 +192,7 @@ public class NFCWebViewFragment extends Fragment implements NfcAdapter.ReaderCal
             webMessagePorts[0].postMessage(new WebMessage(resp.toString()));
         } catch (Exception ex) {
             Log.e(TAG, ex.toString());
+            sendExceptionToWebApp(ex);
         }
     }
 
@@ -198,6 +211,7 @@ public class NFCWebViewFragment extends Fragment implements NfcAdapter.ReaderCal
             webMessagePorts[0].postMessage(new WebMessage(resp.toString()));
         } catch (Exception ex) {
             Log.e(TAG, ex.toString());
+            sendExceptionToWebApp(ex);
         }
     }
 }

@@ -61,7 +61,7 @@ public class WiFiConfigFragment extends Fragment implements View.OnClickListener
 
             if  (binding.wifiConfigPrivate.isChecked()) {
                 enterpriseConfig.setIdentity("toor.sh");
-                enterpriseConfig.setIdentity("ireallywanttoputmycomputerontherawinternet");
+                enterpriseConfig.setPassword("ireallywanttoputmycomputerontherawinternet");
             } else {
                 enterpriseConfig.setIdentity("toorcamp");
                 enterpriseConfig.setPassword("toorcamp");
